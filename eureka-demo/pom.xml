@@ -12,6 +12,7 @@
 		<module>eureka-server</module>
 		<module>eureka-server02</module>
 		<module>service-provider</module>
+		<module>service-provider02</module>
 		<module>service-consumer</module>
 	</modules>
 

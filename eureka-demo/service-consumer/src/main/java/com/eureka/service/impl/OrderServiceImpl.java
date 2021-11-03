@@ -68,6 +68,7 @@ public class OrderServiceImpl implements OrderService {
 		ServiceInstance si = serviceInstances.get(0);
 		sb = new StringBuffer();
 		sb.append("http://" + si.getHost() + ":" + si.getPort() + "/product/list");
+		System.out.println(sb.toString());
 		ResponseEntity<List<Product>> response = restTemplate.exchange(sb.toString(),
 		                                                               HttpMethod.GET,
 		                                                               null,
@@ -86,6 +87,7 @@ public class OrderServiceImpl implements OrderService {
 		}
 		sb = new StringBuffer();
 		sb.append("http://" + si.getHost() + ":" + si.getPort() + "/product/list");
+		System.out.println(sb.toString());
 		ResponseEntity<List<Product>> response = restTemplate.exchange(sb.toString(),
 		                                                               HttpMethod.GET,
 		                                                               null,
