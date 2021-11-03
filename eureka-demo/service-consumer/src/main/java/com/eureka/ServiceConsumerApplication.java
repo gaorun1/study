@@ -1,6 +1,5 @@
 package com.eureka;
 
-import com.netflix.loadbalancer.RandomRule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -14,12 +13,11 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringBootApplication
 public class ServiceConsumerApplication {
-
-	//全局指定负载均衡策略
-	@Bean
-	public RandomRule randomRule() {
-		return new RandomRule();
-	}
+	//	//全局指定负载均衡策略
+	//	@Bean
+	//	public RandomRule randomRule() {
+	//		return new RandomRule();
+	//	}
 
 	@Bean
 	public RestTemplate restTemplate() {
