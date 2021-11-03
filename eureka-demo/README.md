@@ -1,10 +1,10 @@
 # 项目说明 #
 
 ```
-eureka-server    eureka注册中心
-eureka-server02  eureka注册中心
-eureka-provider  服务提供端
-umner 服务消费端
+eureka-server     eureka注册中心
+eureka-server02   eureka注册中心
+service-provider  服务提供端
+service-consumer  服务消费端
 ```
 
 ## 所有项目跑起来之后测试地址
