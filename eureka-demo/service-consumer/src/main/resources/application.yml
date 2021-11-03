@@ -1,0 +1,18 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: service-consumer
+
+eureka:
+#  instance:
+#    prefer-ip-address: true   #显示IP
+#    instance-id: ${spring.cloud.client.ip-address}:${server.port} #以这种形式显示
+  client:
+    register-with-eureka: false
+    registry-fetch-interval-seconds: 10 #到注册中心拉去注册信息的时间，默认30s
+    #    fetch-registry: false
+    service-url:
+      defaultZone: http://root:123456@localhost:8761/eureka/,http://root:123456@localhost:8762/eureka/,
+
