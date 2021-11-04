@@ -21,18 +21,8 @@ public class OrderController {
 	@Resource
 	private OrderService orderService;
 
-	@GetMapping("/dis/{id}")
+	@GetMapping("/{id}")
 	public Order selectOrderByDis(@PathVariable Integer id) {
-		return orderService.selectOrderByDis(id);
-	}
-
-	@GetMapping("/ld/{id}")
-	public Order selectOrderByLd(@PathVariable Integer id) {
-		return orderService.selectOrderByLd(id);
-	}
-
-	@GetMapping("/lda/{id}")
-	public Order selectOrderByLda(@PathVariable Integer id) {
-		return orderService.selectOrderByLda(id);
+		return orderService.selectOrderById(id);
 	}
 }
