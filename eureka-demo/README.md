@@ -56,7 +56,28 @@ service-provider-服务名称:
 与普通Spring GET请求传参一致
 
 只不过这里在消费者服务的接口中定义
+
+测试地址：`http://localhost:9090/order/producr/1`
 ```java
 @GetMapping("/product/{id}")
 Product selectProductById(@PathVariable Integer id);
+```
+
+## POST请求传参
+
+与普通Spring POST请求传参一致
+
+只不过这里在消费者服务的接口中定义
+
+在body中传参，测试地址：
+
+http://localhost:9090/order/producr/save
+
+http://localhost:9090/order/producr/single
+```java
+@PostMapping("/product/save")
+Map<Object, Object> saveProduct(@RequestBody Product product);
+
+@PostMapping("/product/single")
+Product queryProductById(@RequestBody Integer id);
 ```

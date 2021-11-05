@@ -1,13 +1,13 @@
 package com.eureka.controller;
 
 import com.eureka.entity.Order;
+import com.eureka.entity.Product;
 import com.eureka.service.OrderService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.eureka.service.ProductService;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.Map;
 
 /**
  * @author gaorun
@@ -20,6 +20,8 @@ public class OrderController {
 
 	@Resource
 	private OrderService orderService;
+	@Resource
+	private ProductService productService;
 
 	@GetMapping("/{id}")
 	public Order selectOrderByDis(@PathVariable Integer id) {
@@ -29,5 +31,15 @@ public class OrderController {
 	@GetMapping("/product/{id}")
 	public Order selectOrderById(@PathVariable Integer id) {
 		return orderService.selectOrderByProductId(id);
+	}
+
+	@PostMapping("/product/save")
+	public Map<Object, Object> saveProduct(Product product) {
+		return productService.saveProduct(product);
+	}
+
+	@PostMapping("/product/single")
+	public Product queryProductById(Integer id) {
+		return productService.queryProductById(id);
 	}
 }
