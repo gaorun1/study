@@ -36,3 +36,11 @@ public class ServiceConsumerApplication {
 	}
 }
 ```
+## 全局设置负载均衡策略
+- 服务消费者配置负载均衡策略，在启动类中添加策略Bean
+```java
+    @Bean
+    public RandomRule randomRule() {
+        return new RandomRule();
+    }
+```
