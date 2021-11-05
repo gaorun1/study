@@ -105,3 +105,24 @@ server:
     enabled: true
     mime-types: text/xml,application/xml,application/json，text/plain                                    #响应时也开启
 ```
+## HTTP连接池
+添加项目依赖
+```xml
+<!--springboot默认已经支持 apache httpclient依赖-->
+<!--		<dependency>-->
+<!--			<groupId>org.apache.httpcomponents</groupId>-->
+<!--			<artifactId>httpclient</artifactId>-->
+<!--		</dependency>-->
+<!--feign apache httpclient 依赖-->
+<dependency>
+    <groupId>io.github.openfeign</groupId>
+    <artifactId>feign-httpclient</artifactId>
+    <version>10.7.4</version>
+</dependency>
+```
+修改配置
+```yml
+feign:
+  httpclient:
+    enabled: true
+```

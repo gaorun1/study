@@ -27,4 +27,7 @@ service-provider:
     #指定具体服务提供者列表
     listOfServers: http://localhost:7070,http://localhost:7071
 
+feign:
+  httpclient:
+    enabled: true
 
