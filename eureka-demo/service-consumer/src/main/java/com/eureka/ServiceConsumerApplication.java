@@ -15,10 +15,10 @@ import org.springframework.context.annotation.Bean;
 @EnableFeignClients
 public class ServiceConsumerApplication {
 
-	@Bean
-	public RandomRule randomRule() {
-		return new RandomRule();
-	}
+//	@Bean
+//	public RandomRule randomRule() {
+//		return new RandomRule();
+//	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(ServiceConsumerApplication.class);

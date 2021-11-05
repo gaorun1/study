@@ -44,3 +44,9 @@ public class ServiceConsumerApplication {
         return new RandomRule();
     }
 ```
+## 指定服务使用何种负载均衡策略
+```yml
+service-provider-服务名称:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+```
