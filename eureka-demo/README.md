@@ -81,3 +81,17 @@ Map<Object, Object> saveProduct(@RequestBody Product product);
 @PostMapping("/product/single")
 Product queryProductById(@RequestBody Integer id);
 ```
+## 局部配置Feign gzip压缩
+服务消费者到服务提供者开启，浏览器到消费者是没有开启的
+
+消费者端增加配置
+```yml
+feign:
+  compression:
+    request:
+      mime-types: text/xml,application/xml,application/json #配置压缩支持的MIME类型
+      min-request-size: 512                                 #配置压缩数据大小的最小阈值 默认2048
+      enabled: true                                         #开启
+    response:
+      enabled: true                                         #响应时也开启
+```
