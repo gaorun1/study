@@ -50,3 +50,13 @@ service-provider-服务名称:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 ```
+
+## GET请求传参
+
+与普通Spring GET请求传参一致
+
+只不过这里在消费者服务的接口中定义
+```java
+@GetMapping("/product/{id}")
+Product selectProductById(@PathVariable Integer id);
+```

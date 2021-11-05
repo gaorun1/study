@@ -25,4 +25,9 @@ public class OrderController {
 	public Order selectOrderByDis(@PathVariable Integer id) {
 		return orderService.selectOrderById(id);
 	}
+
+	@GetMapping("/product/{id}")
+	public Order selectOrderById(@PathVariable Integer id) {
+		return orderService.selectOrderByProductId(id);
+	}
 }

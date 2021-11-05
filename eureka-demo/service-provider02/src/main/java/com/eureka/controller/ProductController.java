@@ -3,6 +3,7 @@ package com.eureka.controller;
 import com.eureka.entiy.Product;
 import com.eureka.service.ProductService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,5 +25,10 @@ public class ProductController {
 	@GetMapping("/list")
 	public List<Product> selectProductList() {
 		return productService.selectProductList();
+	}
+
+	@GetMapping("/{id}")
+	public Product selectProductById(@PathVariable int id) {
+		return productService.selectProductById(id);
 	}
 }

@@ -10,4 +10,6 @@ import com.eureka.entity.Order;
 public interface OrderService {
 
 	Order selectOrderById(Integer id);
+
+	Order selectOrderByProductId(Integer id);
 }

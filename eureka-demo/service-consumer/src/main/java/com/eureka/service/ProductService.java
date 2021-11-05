@@ -3,6 +3,7 @@ package com.eureka.service;
 import com.eureka.entity.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -16,4 +17,7 @@ public interface ProductService {
 
 	@GetMapping("/product/list")
 	List<Product> selectProductList();
+
+	@GetMapping("/product/{id}")
+	Product selectProductById(@PathVariable Integer id);
 }
