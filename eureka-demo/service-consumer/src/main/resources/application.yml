@@ -1,5 +1,9 @@
 server:
   port: 9090
+  #全局配置gzip压缩  服务消费者到服务提供者开启，浏览器到消费者也开启
+  compression:
+    enabled: true
+    mime-types: text/xml,application/xml,application/json,text/plain
 
 spring:
   application:
@@ -23,13 +27,4 @@ service-provider:
     #指定具体服务提供者列表
     listOfServers: http://localhost:7070,http://localhost:7071
 
-#局部配置Feign gzip压缩  服务消费者到服务提供者开启，浏览器到消费者是没有开启的
-feign:
-  compression:
-    request:
-      mime-types: text/xml,application/xml,application/json #配置压缩支持的MIME类型
-      min-request-size: 512                                 #配置压缩数据大小的最小阈值 默认2048
-      enabled: true                                         #开启
-    response:
-      enabled: true                                         #响应时也开启
 

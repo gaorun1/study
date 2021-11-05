@@ -95,3 +95,13 @@ feign:
     response:
       enabled: true                                         #响应时也开启
 ```
+## 全局配置项目gzip压缩
+服务消费者到服务提供者开启，浏览器到消费者也开启
+
+消费者端增加配置
+```yml
+server:
+  compression:
+    enabled: true
+    mime-types: text/xml,application/xml,application/json，text/plain                                    #响应时也开启
+```
