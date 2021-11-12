@@ -154,5 +154,16 @@ ribbon:
   ReadTimeout: 5000     #请求处理超时时间
 ```
 
+不同服务分别设定超时时间
+```yaml
+#微服务名称
+service-provider:
+  ribbon:
+    OkToRetryOnAllOperations: true #对所有请求都进行重试
+    MaxAutoRetries: 2              #对当前实例重试次数
+    MaxAutoRetriesNextServer: 0    #切换实例的重试次数
+    ConnectTimeout: 3000           #请求链接超时时间
+    ReadTimeout: 3000              #请求处理超时时间
+```
 
 
