@@ -27,6 +27,11 @@ public class ProductController {
 
 	@GetMapping("/{id}")
 	public Product selectProductById(@PathVariable int id) {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return productService.selectProductById(id);
 	}
 

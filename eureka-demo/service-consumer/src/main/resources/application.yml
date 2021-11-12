@@ -35,3 +35,7 @@ feign:
       service-provider: #指定服务名称
         loggerLevel: FULL
 
+ribbon:
+  ConnectTimeout: 5000  #请求链接超时时间 默认1秒
+  ReadTimeout: 5000     #请求处理超时时间
+

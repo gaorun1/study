@@ -146,5 +146,13 @@ feign:
       service-provider: #指定服务名称
         loggerLevel: FULL
 ```
+## 请求时间超时处理
+全局处理 消费端添加配置
+```yaml
+ribbon:
+  ConnectTimeout: 5000  #请求链接超时时间 默认1秒
+  ReadTimeout: 5000     #请求处理超时时间
+```
+
 
 
