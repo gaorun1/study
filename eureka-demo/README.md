@@ -126,3 +126,25 @@ feign:
   httpclient:
     enabled: true
 ```
+
+## 状态查看 基于logback
+添加配置文件logback.xml
+
+全局配置，在消费端启动类注入Bean
+```java
+@Bean
+public Logger.Level getLogo() {
+    return Logger.Level.FULL;
+}
+```
+
+指定服务添加状态记录,在消费端添加配置
+```yaml
+feign:
+  client:
+    config:
+      service-provider: #指定服务名称
+        loggerLevel: FULL
+```
+
+

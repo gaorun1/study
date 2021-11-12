@@ -1,5 +1,5 @@
 server:
-  port: 9090
+  port: 9988
   #全局配置gzip压缩  服务消费者到服务提供者开启，浏览器到消费者也开启
   compression:
     enabled: true
@@ -30,4 +30,8 @@ service-provider:
 feign:
   httpclient:
     enabled: true
+  client:
+    config:
+      service-provider: #指定服务名称
+        loggerLevel: FULL
 
